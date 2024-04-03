@@ -1,0 +1,210 @@
+<html>
+    <head>
+        <link rel="stylesheet" href="style.css">
+    </head>
+    <div id="container">
+
+    
+        <div id="container">
+            <div id="headerArea">
+                <div id="header" img src = "rainbowbees.jpg" style="height: 224px;"></div>
+                
+                <nav id="navbar" style="margin-bottom: 10px;">
+                    <ul>
+                        <li><a href="homepage.html">Home</a></li>
+                        <li><a href="about.html">About</a></li>
+                        <li><a href="gallery.html">Gallery</a></li>
+                        <li><a href="blog.html">Blog</a></li>
+                        <li><a href="comments.html">Comments</a></li>
+                       
+                    </ul>
+                </nav>
+            </div>
+            <style>
+            
+                   /*
+                   CSS portion 
+                   */
+        
+                    :root {
+                        --header-image: url('rainbowbees.jpg');
+                        
+        
+                        /* colors */
+                        --content: hsl(292, 47%, 87%);
+                    }
+        
+        
+                    /* Fonts 
+                    Found @ sadhost.neocities.org
+                    */
+        
+                    @font-face {
+                        font-family: Nunito;
+                        src: url('https://sadhost.neocities.org/fonts/Nunito-Regular.ttf');
+                    }
+        
+                    @font-face {
+                        font-family: Nunito;
+                        src: url('https://sadhost.neocities.org/fonts/Nunito-Bold.ttf');
+                        font-weight: bold;
+                    }
+        
+                    @font-face {
+                        font-family: Nunito;
+                        src: url('https://sadhost.neocities.org/fonts/Nunito-Italic.ttf');
+                        font-style: italic;
+                    }
+        
+                    @font-face {
+                        font-family: Nunito;
+                        src: url('https://sadhost.neocities.org/fonts/Nunito-BoldItalic.ttf');
+                        font-style: italic;
+                        font-weight: bold;
+                    }
+        
+                    body {
+                        font-family: 'Nunito', sans-serif;
+                        margin: 0;
+                        background-color: #fdfbf7;
+                        /* for background image, not currently in use
+                        background-size: 65px;
+                        color: #140a0a;
+                        background-image: var(--body-bg-image);
+                        */
+                    }
+        
+                    * {
+                        box-sizing: border-box;
+                    }
+        
+                    /* 
+                    Width, centering the page 
+                    */ 
+                    #container {
+                        max-width: 900px;
+                        
+                        margin: 0 auto;
+                        
+                    }
+        
+                    /* Links (non-nav) */
+                    #container a {
+                        color: #3f2a40;
+                        font-weight: bold;
+                        
+                    }
+        
+                    #header {
+                        width: 100%;
+                        background-color: #5e4e8c;
+                        height: 150px;
+                        background-image: var(--header-image);
+                        background-size: 100%;
+                        filter: blur(4px);
+                        -webkit-filter: blur(4px);
+                         
+                    }
+        
+                    /* navigation */
+                    #navbar {
+                        height: 40px;
+                        background-color: #fff6ec;
+                        width: 100%;
+                    }
+        
+                    #navbar ul {
+                        display: flex;
+                        padding: 0;
+                        margin: 0;
+                        list-style-type: none;
+                        justify-content: space-evenly;
+                    }
+        
+                    #navbar li {
+                        padding-top: 10px;
+                    }
+        
+                    /* navigation links*/
+                    #navbar li a {
+                        color: #2f2455;
+                        font-weight: 800;
+                        text-decoration: none;
+                       
+                    }
+        
+                    /* nav link hover */
+                    #navbar li a:hover {
+                        color: #ba96d4;
+                        text-decoration: underline;
+                    }
+        
+                    #flex {
+                        display: flex;
+                    }</style>
+
+
+
+<div id="dtext">
+    
+  <h4>Say Something!</h4>
+  <input id="namebox" type="text" maxlength="32" size="35" placeholder="Name" style="text-align: center;" />
+  <br />
+  <textarea id="txt1" class="textbox" rows="10" placeholder="Your comment" style="text-align: center;"></textarea>
+</div>
+
+<h4>Comments</h4>
+<div id="cmtlist"></div>
+
+<button class="navbutton" onClick="saveComment()"> Post </button>
+
+
+
+<script>
+    // utility functions for localstorage
+function setObject(key, value) {
+  window.localStorage.setItem(key, JSON.stringify(value));
+}
+function getObject(key) {
+  var storage = window.localStorage,
+      value = storage.getItem(key);
+  return value && JSON.parse(value);
+}
+function clearStorage() {
+  window.localStorage.clear();
+}
+
+
+function saveComment(){
+  var cText = $('#txt1').val(),
+      cName = $('#namebox').val(),
+      cmtList = getObject('cmtlist');
+
+  if (cmtList){
+    cmtList.push({name: cName, text: cText});
+    setObject('cmtlist', cmtList);
+  }else{ //Add a comment
+    setObject('cmtlist', [{name: cName, text: cText}]);
+  }
+
+  bindCmt();
+}
+
+function bindCmt(){
+  var cmtListElement = $('#cmtlist'),
+      cmtList = getObject('cmtlist');
+
+  //Out with the old
+  cmtListElement.empty();
+  //And in with the new
+  $.each(cmtList, function(i, k){
+    cmtListElement.append( $('<p><span>'+ k.name +'</span>'+ k.text +'</p>') );
+  });
+}
+
+//Get the comments on page ready
+$(function(){
+  bindCmt();
+});
+</script>
+</html>

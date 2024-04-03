@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html>
+    
+    <div id="container">
+
+    
+        <div id="container">
+            <div id="headerArea">
+                <div id="header" img src = "rainbowbees.jpg" style="height: 224px;"></div>
+                
+                <nav id="navbar" style="margin-bottom: 10px;">
+                    <ul>
+                        <li><a href="homepage.html">Home</a></li>
+                        <li><a href="about.html">About</a></li>
+                        <li><a href="gallery.html">Gallery</a></li>
+                        <li><a href="blog.html">Blog</a></li>
+                        <li><a href="comments.html">Comments</a></li>
+                       
+                    </ul>
+                </nav>
+            </div>
+<head>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        div.gallery {
+          border: 1px solid #ccc;
+        }
+        
+        div.gallery:hover {
+          border: 1px solid #777;
+        }
+        
+        div.gallery img {
+          width: 100%;
+          height: auto;
+        }
+        
+        div.desc {
+          padding: 15px;
+          text-align: center;
+        }
+        
+        * {
+          box-sizing: border-box;
+        }
+        
+        .responsive {
+          padding: 0 6px;
+          float: left;
+          width: 24.99999%;
+        }
+        
+        @media only screen and (max-width: 700px) {
+          .responsive {
+            width: 49.99999%;
+            margin: 6px 0;
+          }
+        }
+        
+        @media only screen and (max-width: 500px) {
+          .responsive {
+            width: 100%;
+          }
+        }
+        
+        .clearfix:after {
+          content: "";
+          display: table;
+          clear: both;
+        }
+        </style>
+</head>
+<body>
+
+<h2>Gallery</h2>
+
+<h4>Check out some stuff I've worked on!</h4>
+
+<div class="responsive">
+  <div class="gallery">
+    <a target="_blank" href="cowegg.jpg">
+      <img src="cowegg.jpg" alt="Cinque Terre" width="600" height="400">
+    </a>
+    <div class="desc">Crocheted cows I affectionately call "Cow Eggs", 2021</div>
+  </div>
+</div>
+
+
+<div class="responsive">
+  <div class="gallery">
+    <a target="_blank" href="katt.jpg">
+      <img src="katt.jpg" alt="Katt" width="600" height="400">
+    </a>
+    <div class="desc">A plush of Katt from Animal Crossing, 2021 </div>
+  </div>
+</div>
+
+<div class="responsive">
+  <div class="gallery">
+    <a target="_blank" href="centitank.jpg">
+      <img src="centitank.jpg" alt="Centrius and Tank" width="600" height="400">
+    </a>
+    <div class="desc">Custom plush commissions for my two friends, 2024</div>
+  </div>
+</div>
+
+<div class="responsive">
+  <div class="gallery">
+    <a target="_blank" href="mushdude.jpg">
+      <img src="mushdude.jpg" alt="Mushroom friend" width="600" height="400">
+    </a>
+    <div class="desc">Mushroom dude, 2021</div>
+  </div>
+</div>
+
+<div class="clearfix"></div>
+
+<div style="padding:6px;">
+  
+ <p></p>
+
+</body>
+</html>
+
+

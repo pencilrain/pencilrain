@@ -1,0 +1,267 @@
+<html>
+ 
+        <div id="container">
+
+    
+            <div id="container">
+                <div id="headerArea">
+                    <div id="header" img src = "rainbowbees.jpg" style="height: 224px;"></div>
+                    
+                    <nav id="navbar" style="margin-bottom: 10px;">
+                        <ul>
+                            <li><a href="homepage.html">Home</a></li>
+                            <li><a href="about.html">About</a></li>
+                            <li><a href="gallery.html">Gallery</a></li>
+                            <li><a href="blog.html">Blog</a></li>
+                            <li><a href="comments.html">Comments</a></li>
+                           
+                        </ul>
+                    </nav>
+                </div>
+                
+                    </aside>
+                    <main>
+                        <h1>About Me</h1>
+                        
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. </p>
+                        <p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum</p>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. </p>
+                        <p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum</p>
+    
+                    </main>
+                    
+                </div>
+                
+            </div>
+            
+            <style>
+               /*
+               CSS portion 
+               */
+    
+                :root {
+                    --header-image: url('rainbowbees.jpg');
+                    
+    
+                    /* colors */
+                    --content: hsl(292, 47%, 87%);
+                }
+    
+    
+                /* Fonts 
+                Found @ sadhost.neocities.org
+                */
+    
+                @font-face {
+                    font-family: Nunito;
+                    src: url('https://sadhost.neocities.org/fonts/Nunito-Regular.ttf');
+                }
+    
+                @font-face {
+                    font-family: Nunito;
+                    src: url('https://sadhost.neocities.org/fonts/Nunito-Bold.ttf');
+                    font-weight: bold;
+                }
+    
+                @font-face {
+                    font-family: Nunito;
+                    src: url('https://sadhost.neocities.org/fonts/Nunito-Italic.ttf');
+                    font-style: italic;
+                }
+    
+                @font-face {
+                    font-family: Nunito;
+                    src: url('https://sadhost.neocities.org/fonts/Nunito-BoldItalic.ttf');
+                    font-style: italic;
+                    font-weight: bold;
+                }
+    
+                body {
+                    font-family: 'Nunito', sans-serif;
+                    margin: 0;
+                    background-color: #fdfbf7;
+                    /* for background image, not currently in use
+                    background-size: 65px;
+                    color: #140a0a;
+                    background-image: var(--body-bg-image);
+                    */
+                }
+    
+                * {
+                    box-sizing: border-box;
+                }
+    
+                /* 
+                Width, centering the page 
+                */ 
+                #container {
+                    max-width: 900px;
+                    
+                    margin: 0 auto;
+                    
+                }
+    
+                /* Links (non-nav) */
+                #container a {
+                    color: #3f2a40;
+                    font-weight: bold;
+                    
+                }
+    
+                #header {
+                    width: 100%;
+                    background-color: #5e4e8c;
+                    height: 150px;
+                    background-image: var(--header-image);
+                    background-size: 100%;
+                    filter: blur(4px);
+                    -webkit-filter: blur(4px);
+                     
+                }
+    
+                /* navigation */
+                #navbar {
+                    height: 40px;
+                    background-color: #fff6ec;
+                    width: 100%;
+                }
+    
+                #navbar ul {
+                    display: flex;
+                    padding: 0;
+                    margin: 0;
+                    list-style-type: none;
+                    justify-content: space-evenly;
+                }
+    
+                #navbar li {
+                    padding-top: 10px;
+                }
+    
+                /* navigation links*/
+                #navbar li a {
+                    color: #2f2455;
+                    font-weight: 800;
+                    text-decoration: none;
+                   
+                }
+    
+                /* nav link hover */
+                #navbar li a:hover {
+                    color: #ba96d4;
+                    text-decoration: underline;
+                }
+    
+                #flex {
+                    display: flex;
+                }
+    
+                /* Sidebar */
+                aside {
+                    background-color: #fff6ec;
+                    width: 200px;
+                    padding: 20px;
+                    font-size: smaller;
+                    
+                }
+    
+    
+                /* Body */
+                main {
+                    background-color: #fff6ec;
+                    flex: 1;
+                    padding: 20px;
+                    order: 2;
+                }
+    
+                /* Sidebar 1 
+                Content 2
+                 */
+    
+                */ #leftSidebar {
+                    order: 1;
+                }
+    
+                #rightSidebar {
+                    order: 3;
+                }
+                 /* footer */
+                footer {
+                    background-color: #fff6ec;
+                    
+                    width: 100%;
+                    height: 40px;
+                    padding: 10px;
+                    text-align: center;
+                    
+                }
+    
+                h1,
+                h2,
+                h3 {
+                    color: #140a0a;
+                }
+    
+                h1 {
+                    font-size: 25px;
+                }
+    
+                strong {
+                    
+                    color: #140a0a;
+                }
+    
+                /* Updates box */
+                .box {
+                    background-color: #fff6ec;
+                    border: 1px solid #140a0a;
+                    padding: 10px;
+                }
+    
+                
+    
+                #topBar {
+                    width: 100%;
+                    height: 30px;
+                    padding: 10px;
+                    font-size: smaller;
+                    background-color: #13092D;
+                }
+    
+    
+                /* MEDIA QUERY */
+    
+    
+                @media only screen and (max-width: 800px) {
+                    #flex {
+                        flex-wrap: wrap;
+                    }
+    
+                    aside {
+                        width: 100%;
+                    }
+    
+                    /* Order organization 
+                     */
+                    main {
+                        order: 1;
+                    }
+    
+                    #leftSidebar {
+                        order: 2;
+                    }
+    
+                    #rightSidebar {
+                        order: 3;
+                    }
+    
+                    #navbar ul {
+                        flex-wrap: wrap;
+                    }
+                }
+            </style>
+    
+        
+
+    </html>
+    
